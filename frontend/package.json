@@ -1,0 +1,9 @@
+{
+  "name": "air-quality-frontend",
+  "version": "1.0.0",
+  "description": "Air Quality Index Frontend",
+  "scripts": {
+    "start": "python3 -m http.server 3000",
+    "dev": "python -m http.server 3000"
+  }
+}

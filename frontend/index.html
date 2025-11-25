@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Index Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-wind"></i> Air Quality Index</h1>
+            <p>Search for real-time air quality information by city name</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="cityInput" 
+                    placeholder="Enter city name (e.g., London, New York, Delhi)..."
+                    autocomplete="off"
+                >
+                <button id="searchBtn">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+            <div class="examples">
+                <span>Try: </span>
+                <button class="example-btn" data-city="London">London</button>
+                <button class="example-btn" data-city="New York">New York</button>
+                <button class="example-btn" data-city="Tokyo">Tokyo</button>
+                <button class="example-btn" data-city="Delhi">Delhi</button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Fetching air quality data...</p>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+
+        <div id="results" class="results hidden">
+            <div class="city-header">
+                <h2 id="cityName"></h2>
+                <div id="aqiBadge" class="aqi-badge"></div>
+            </div>
+
+            <div class="main-aqi">
+                <div class="aqi-circle">
+                    <span id="aqiValue" class="aqi-value"></span>
+                    <span class="aqi-label">AQI</span>
+                </div>
+                <div class="aqi-status">
+                    <h3 id="aqiStatus"></h3>
+                    <p id="aqiDescription"></p>
+                </div>
+            </div>
+
+            <div class="pollutants-section">
+                <h3><i class="fas fa-flask"></i> Pollutant Levels</h3>
+                <div id="pollutants" class="pollutants-grid"></div>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <label>Location</label>
+                        <span id="location"></span>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <label>Last Updated</label>
+                        <span id="timestamp"></span>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-skull-crossbones"></i>
+                    <div>
+                        <label>Dominant Pollutant</label>
+                        <span id="dominantPollutant"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="attribution" id="attribution"></div>
+        </div>
+
+        <div class="cache-info">
+            <small>Responses are cached for faster repeated searches</small>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
