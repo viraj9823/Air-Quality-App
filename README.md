@@ -37,8 +37,8 @@ npx http-server -p 3000
 
 5. Open the Application
 Open your browser and visit:
-http://192.168.223.1:3000
-http://192.168.81.1:3000
-http://192.168.1.101:3000
-http://127.0.0.1:3000
+http://192.168.223.1:3001
+  http://192.168.81.1:3001
+  http://10.52.115.246:3001
+  http://127.0.0.1:3001
 
